@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class ConsumoCloud(models.Model):
@@ -7,7 +8,7 @@ class ConsumoCloud(models.Model):
     proveedor = models.CharField(max_length=20)  # 'AWS' o 'GCP'
     servicio = models.CharField(max_length=100)
     costo = models.DecimalField(max_digits=12, decimal_places=4) # Costo total del servicio en el mes
-    mes = models.IntegerField() # 1-12
+    mes = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(12)]) # 1-12
     anio = models.IntegerField() # Año del consumo
     region = models.CharField(max_length=50, null=True, blank=True) 
 
