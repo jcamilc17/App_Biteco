@@ -11,7 +11,7 @@ class Empresa(models.Model):
     fechaRegistro = models.DateField(default=datetime.date.today)
     estado = models.CharField(max_length=100)
     
-    # TODO terminar las asociaciones, ver si volver factura un item imbeded dentro de empresa
+    # Relaciones
     plan_suscripcion = models.ForeignKey(PlanSuscripcion, on_delete=models.SET_NULL, default=None)
     
 

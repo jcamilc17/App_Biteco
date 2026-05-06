@@ -37,9 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'alerta',
+    'cuentaCloud',
+    'empresa',
+    'factura',
+    'pago',
+    'planSuscripcion',
+    'proyecto',
+    'recursoCloud',
+    'registroAuditoria',
+    'registroCosto',
     'reporte',
     'usuario',
-    'empresa',
+    
 ]
 
 MIDDLEWARE = [

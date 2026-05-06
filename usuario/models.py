@@ -1,5 +1,8 @@
 from django.db import models
 
+from empresa.models import Empresa
+from proyecto.models import Proyecto
+
 class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
@@ -9,7 +12,10 @@ class Usuario(models.Model):
     fechaCreacion = models.DateField(auto_now_add=True)
     ultimoAcceso = models.DateField(auto_now=True)
     estado = models.CharField(max_length=100)
-    # TODO relaciones
+
+    # Relaciones
+    proyectos = models.ManyToManyField(Proyecto)
+    empresa = models.ForeignKey(Empresa, on_delete=models.SET_NULL, verbose_name='empresa')
 
     def __str__(self):
         return self.nombre

@@ -9,7 +9,6 @@ class PlanSuscripcion(models.Model):
     soportePremium = models.BooleanField()
     analisisAvanzado = models.BooleanField()
     estado = models.CharField()
-    # TODO terminar asociaciones
     
     def __str__(self):
         return f'{self.nombre}: {self.descripcion}'
